@@ -1,0 +1,46 @@
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 400,
+       "width": 500,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Volume Control",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Pavucontrol$",
+       "instance": "^pavucontrol$",
+       "title": "^Volume\\ Control$",
+       "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 486,
+       "width": 842,
+       "x": 0,
+       "y": 0
+    },
+    "name": "termite",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Termite$",
+       "instance": "^termite$",
+       "title": "^termite$",
+       "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
