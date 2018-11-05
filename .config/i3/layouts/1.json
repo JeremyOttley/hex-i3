@@ -1,0 +1,20 @@
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1025,
+       "width": 936,
+       "x": 0,
+       "y": 0
+    },
+    "percent": 1,
+    "swallows": [
+       {
+       "class": "^Caja$",
+       "instance": "^caja$",
+       "transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
