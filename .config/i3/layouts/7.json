@@ -1,0 +1,46 @@
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1025,
+       "width": 622,
+       "x": 0,
+       "y": 0
+    },
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^discord$",
+       "instance": "^discord$",
+       "transient_for": "^$",
+       "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1025,
+       "width": 936,
+       "x": 4809,
+       "y": 40
+    },
+    "name": "Signal",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^Signal$",
+       "instance": "^signal$",
+       "title": "^Signal$",
+       "transient_for": "^$",
+       "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
