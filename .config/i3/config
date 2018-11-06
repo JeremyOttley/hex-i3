@@ -1,4 +1,21 @@
 # HexDSL i3wm Config. major update: October 2018
+#    _ _____                     _____      
+#   (_)__  /   _________  ____  / __(_)___ _
+#  / / /_ <   / ___/ __ \/ __ \/ /_/ / __ `/
+# / /___/ /  / /__/ /_/ / / / / __/ / /_/ /
+#/_//____/   \___/\____/_/ /_/_/ /_/\__, /  
+#                                  /____/   
+
+## MODKEYS ##
+
+set  $ALT              Mod1
+set  $CAPS             Mod3
+set  $CONTROL_R        Mod3
+set $SUPER Mod4
+
+set $TERM xterm
+
+set $BROWSER qutebrowser
 
 # #---BASICS---# #
 	for_window [class="^.*"] border pixel 3
@@ -10,9 +27,15 @@
  	set $inactive-text-color #676E7D
  	set $urgent-bg-color     #2f343f
  	set $windowcolor	     #A11581
+	
+	#set $ws1 "&#xf120;"
+	#set $ws2 "&#xf115;"
+	#set $ws3 "&#xf269;"
+	#set $ws4 "&#xf1bc;"
+	#set $ws5 "&#xf1e2;"
+
 
 	#Vairables
-	set $mod Mod4
 	set $ws1 "1"
 	set $ws2 "2"
 	set $ws3 "3"
@@ -30,115 +53,92 @@
 	#Left   = HDMI-0
 	#Middle = DP-3
 	#Right  = DP-1
-	workspace $ws1 output HDMI-0
-	workspace $ws2 output HDMI-0
-	workspace $ws3 output HDMI-0
-	workspace $ws4 output DP-3
-	workspace $ws5 output DP-3
-	workspace $ws6 output DP-3
-	workspace $ws7 output DP-1
-	workspace $ws8 output DP-1
-	workspace $ws9 output DP-1
-	workspace $ws10 output DP-3
-
+	#workspace $ws1 output HDMI-0
+	#workspace $ws2 output DP-3
+	
 	#scratchpad
-	bindsym $mod+Shift+minus move scratchpad
-	bindsym $mod+minus scratchpad show, resize set 1600 900, move absolute position center
-	floating_modifier $mod
+	bindsym $ALT+Shift+minus move scratchpad
+	bindsym $ALT+minus scratchpad show, resize set 1600 900, move absolute position center
+	floating_modifier $ALT
 
 # #---LAUNCHERS---# #
 
-	bindsym $mod+Return exec --no-startup-id $termin
-	bindsym $mod+Escape exec --no-startup-id xfce4-taskmanager
-	bindsym $mod+Shift+q kill
-	bindsym $mod+Shift+r restart
-	bindsym $mod+Shift+notsign exec --no-startup-id systemctl poweroff
-	bindsym $mod+Shift+o exec --no-startup-id screenoff
-	bindsym $mod+d exec --no-startup-id rofi -show run
-	bindsym $mod+c exec --no-startup-id rofi -show window
-	bindsym $mod+q exec --no-startup-id firejail $brows
-	bindsym $mod+Shift+numbersign exec --no-startup-id /home/hexdsl/.bin/vpntoggle
-	bindsym $mod+numbersign exec --no-startup-id /home/hexdsl/.bin/vpnstatus
-	bindsym $mod+t exec --no-startup-id caja /home/hexdsl/hexdrive/obs
-	bindsym $mod+Shift+t exec --no-startup-id termite -e ranger
-	bindsym $mod+o exec --no-startup-id /home/hexdsl/.bin/bottomleft
-	bindsym $mod+m exec --no-startup-id spotify;workspace $ws2;focus
-	bindsym $mod+s exec --no-startup-id steam-runtime;workspace $ws10;focus
-	bindsym $mod+Shift+s exec --no-startup-id steam-native;workspace $ws10;focus
-	bindsym $mod+i exec --no-startup-id lutris
-	bindsym $mod+Shift+i exec --no-startup-id itch
-	bindsym $mod+Shift+b exec --no-startup-id obs & chatty
-	bindsym $mod+b exec --no-startup-id obs
-	bindsym $mod+z exec --no-startup-id deluge
-	bindsym $mod+x exec --no-startup-id streamlink-twitch-gui
-	bindsym $mod+p exec --no-startup-id ~/.bin/screenshot
-    bindsym $mod+Shift+p exec --no-startup-id ~/.bin/screenshotmiddle
-	bindsym $mod+BackSpace exec --no-startup-id i3-easyfocus -a
-	bindsym $mod+Shift+BackSpace exec --no-startup-id ~/.bin/killbill
-    bindsym $mod+w exec --no-startup-id ~/.bin/glitchup
-    bindsym $mod+apostrophe exec --no-startup-id blueberry
-	bindsym $mod+slash exec --no-startup-id notify-send -a time "`date +"%H:%M %a %d %b"`"
+	bindsym $ALT+Return exec --no-startup-id $TERM
+	bindsym $ALT+Escape exec --no-startup-id xfce4-taskmanager
+	bindsym $ALT+Shift+q kill
+	bindsym $ALT+Shift+r restart
+	bindsym $ALT+Shift+notsign exec --no-startup-id systemctl poweroff
+	bindsym $ALT+Shift+o exec --no-startup-id screenoff
+	bindsym $ALT+d exec --no-startup-id rofi -show run
+	bindsym $ALT+c exec --no-startup-id rofi -show window
+	bindsym $ALT+q exec --no-startup-id firejail $BROWSER
+	bindsym $ALT+Shift+t exec --no-startup-id termite -e ranger
+	bindsym $ALT+m exec --no-startup-id spotify;workspace $ws2;focus
+	bindsym $ALT+s exec --no-startup-id steam-runtime;workspace $ws10;focus
+	bindsym $ALT+Shift+s exec --no-startup-id steam-native;workspace $ws10;focus
+	bindsym $ALT+i exec --no-startup-id lutris
+	bindsym $ALT+z exec --no-startup-id deluge
+	bindsym $ALT+x exec --no-startup-id streamlink-twitch-gui
+	bindsym $ALT+BackSpace exec --no-startup-id i3-easyfocus -a
+	bindsym $ALT+slash exec --no-startup-id notify-send -a time "`date +"%H:%M %a %d %b"`"
 
 # #---LAUNCH ON STARTUP---# #
-    exec_always --no-startup-id ~/.config/polybar/launch
-	exec --no-startup-id unclutter
     exec_always killall compton || true && compton -b -f --unredir-if-possible
   # exec --no-startup-id caffeine
 	exec --no-startup-id spotify;workspace $ws2;focus
 	exec --no-startup-id redshift-gtk
 	exec --no-startup-id mate-power-manager
-	exec_always --no-startup-id ~/.bin/glitchup
     exec --no-startup-id nextcloud
 
 # #---MOVEMENT CONTROLS---# #
 
 	# Select & move window
-	bindsym $mod+h focus left
-	bindsym $mod+j focus down
-	bindsym $mod+k focus up
-	bindsym $mod+l focus right
-	bindsym $mod+Shift+h move left
-	bindsym $mod+Shift+j move down
-	bindsym $mod+Shift+k move up
-	bindsym $mod+Shift+l move right
+	bindsym $ALT+h focus left
+	bindsym $ALT+j focus down
+	bindsym $ALT+k focus up
+	bindsym $ALT+l focus right
+	bindsym $ALT+Shift+h move left
+	bindsym $ALT+Shift+j move down
+	bindsym $ALT+Shift+k move up
+	bindsym $ALT+Shift+l move right
 
 	# split orientation
-	bindsym $mod+v split toggle
+	bindsym $ALT+v split toggle
 
 	# resize with arrow keys
-	bindsym $mod+Left		exec --no-startup-id "i3resize left"
-	bindsym $mod+Down		exec --no-startup-id "i3resize down"
-	bindsym $mod+Up			exec --no-startup-id "i3resize up"
-	bindsym $mod+Right		exec --no-startup-id "i3resize right"
+	bindsym $ALT+Left		exec --no-startup-id "i3resize left"
+	bindsym $ALT+Down		exec --no-startup-id "i3resize down"
+	bindsym $ALT+Up			exec --no-startup-id "i3resize up"
+	bindsym $ALT+Right		exec --no-startup-id "i3resize right"
 
 	# Modes
-	bindsym $mod+f fullscreen toggle
-	bindsym $mod+Shift+space floating toggle
-	bindsym $mod+space focus mode_toggle
+	bindsym $ALT+f fullscreen toggle
+	bindsym $ALT+Shift+space floating toggle
+	bindsym $ALT+space focus mode_toggle
 
 	# switch to workspace
-	bindsym $mod+1 workspace $ws1
-	bindsym $mod+2 workspace $ws2
-	bindsym $mod+3 workspace $ws3
-	bindsym $mod+4 workspace $ws4
-	bindsym $mod+5 workspace $ws5
-	bindsym $mod+6 workspace $ws6
-	bindsym $mod+7 workspace $ws7
-	bindsym $mod+8 workspace $ws8
-	bindsym $mod+9 workspace $ws9
-	bindsym $mod+0 workspace $ws10
+	bindsym $ALT+1 workspace $ws1
+	bindsym $ALT+2 workspace $ws2
+	bindsym $ALT+3 workspace $ws3
+	bindsym $ALT+4 workspace $ws4
+	bindsym $ALT+5 workspace $ws5
+	bindsym $ALT+6 workspace $ws6
+	bindsym $ALT+7 workspace $ws7
+	bindsym $ALT+8 workspace $ws8
+	bindsym $ALT+9 workspace $ws9
+	bindsym $ALT+0 workspace $ws10
 
 	# move focused container to workspace
-	bindsym $mod+Shift+1 move container to workspace $ws1
-	bindsym $mod+Shift+2 move container to workspace $ws2
-	bindsym $mod+Shift+3 move container to workspace $ws3
-	bindsym $mod+Shift+4 move container to workspace $ws4
-	bindsym $mod+Shift+5 move container to workspace $ws5
-	bindsym $mod+Shift+6 move container to workspace $ws6
-	bindsym $mod+Shift+7 move container to workspace $ws7
-	bindsym $mod+Shift+8 move container to workspace $ws8
-	bindsym $mod+Shift+9 move container to workspace $ws9
-	bindsym $mod+Shift+0 move container to workspace $ws10
+	bindsym $ALT+Shift+1 move container to workspace $ws1
+	bindsym $ALT+Shift+2 move container to workspace $ws2
+	bindsym $ALT+Shift+3 move container to workspace $ws3
+	bindsym $ALT+Shift+4 move container to workspace $ws4
+	bindsym $ALT+Shift+5 move container to workspace $ws5
+	bindsym $ALT+Shift+6 move container to workspace $ws6
+	bindsym $ALT+Shift+7 move container to workspace $ws7
+	bindsym $ALT+Shift+8 move container to workspace $ws8
+	bindsym $ALT+Shift+9 move container to workspace $ws9
+	bindsym $ALT+Shift+0 move container to workspace $ws10
 
 # #---Audio controls---# #
 	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
