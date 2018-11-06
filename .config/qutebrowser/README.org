@@ -1,0 +1,40 @@
+* Hexdsl's QuteBrowser Config.
+
+This containts the following:
+
+xc = toggle tab visiblity
+
+xx = show tabs for about 5 seconds then hide
+
+z  = show downloads
+
+xb = toggle status bat visibility
+
+B  = show bookmark list
+
+u  = show Quickmark list
+
+xh = Toggle global Solarized-Dark-all-Sites.css
+
+xo = loads & pinds some tabs i like open all the time
+
+1) protonmail
+
+2) youtube dashboard
+
+3) hackmd.io (i use it for podcast notes)
+
+4) Mastodon
+
+5) Nextcloud
+
+Ctrl-m = Spawn mpv and pass it whatever video is on the current page
+
+Ctrl-y = show hints, load selected link in mpv (works on youtube search page!)
+
+Ctrl-r = open current page in readability mode in new tab (uses python-readability)
+
+Ctrl-Shift-p = show pass dialogue (pass is best password manager)
+
+UNBOUND = q (record macro) and Ctrl-v (passthrough) as I dont use these things and have only ever pressed them by mistake!
+
