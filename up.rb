@@ -17,4 +17,4 @@ packages = %w[
   
 ]
 
-# streamlink vscode
+# streamlink vscode xfce4-taskmanager ranger lutris notify-send deluge caffeine mate-power-manager nextcloud nautilus kitty
