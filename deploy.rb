@@ -36,6 +36,7 @@ apps = %w[
   nautilus-sendto 
   file-roller
   kitty-git
+  firejail
 ]
 
 install = ->app{ `trizen -Syu --noconfirm #{app}` }
