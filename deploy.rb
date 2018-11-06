@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 apps = %w[
+  feh
   i3-gaps-next-git
   zsh
   mpv-full-git
