@@ -37,6 +37,7 @@ apps = %w[
   file-roller
   kitty-git
   firejail
+  rxvt-unicode
 ]
 
 install = ->app{ `trizen -Syu --noconfirm #{app}` }
