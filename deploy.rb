@@ -1,22 +1,41 @@
 #!/usr/bin/env ruby
 
 apps = %w[
-  i3
+  i3-gaps-next-git
   zsh
-  mpv
-  compton
-  redshift
-  i3status
+  mpv-full-git
+  compton-git
+  redshift-git
+  redshift-gtk-git
+  i3status-git
   dunst
-  youtube-dl
-  qutebrowser
+  youtube-dl-git
+  youtube-mpv-git
+  qutebrowser-git
   cava
   spotify
-  i3blocks
+  i3blocks-git
   rofi-git
-  i3lock
+  i3lock-color
+  j4-dmenu-desktop
+  pavucontrol-qt-git
+  rvm
+  git
+  emacs
+  neovim-git
+  xfce4-taskmanager-git
+  caffeine-ng
+  lutris-git
+  deluge-git
+  visual-studio-code-bin
+  streamlink-twitch-gui
+  nautilus
+  filemanager-actions 
+  nautilus-terminal 
+  nautilus-sendto 
+  file-roller
+  kitty-git
 ]
-# streamlink vscode xfce4-taskmanager ranger lutris notify-send deluge caffeine mate-power-manager nextcloud nautilus kitty
 
 install = ->app{ `trizen -Syu --noconfirm #{app}` }
 
