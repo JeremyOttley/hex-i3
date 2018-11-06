@@ -17,4 +17,4 @@ packages = %w[
   
 ]
 
-# investigate streamlink
+# streamlink vscode
