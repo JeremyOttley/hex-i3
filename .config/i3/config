@@ -27,27 +27,20 @@ set $BROWSER qutebrowser
  	set $inactive-text-color #676E7D
  	set $urgent-bg-color     #2f343f
  	set $windowcolor	     #A11581
-	
-	#set $ws1 "&#xf120;"
-	#set $ws2 "&#xf115;"
-	#set $ws3 "&#xf269;"
-	#set $ws4 "&#xf1bc;"
-	#set $ws5 "&#xf1e2;"
+
+## FONTS ##
+## font -misc-ubuntu-medium-r-normal-*-0-0-0-0-p-0-iso10646-1
+## font -Wuncon-Siji-Medium-R-Normal--10-100-75-75-C-80-ISO10646-1
+font pango:FontAwesome, xft:Hack 8
 
 
-	#Vairables
-	set $ws1 "1"
-	set $ws2 "2"
-	set $ws3 "3"
-	set $ws4 "4"
-	set $ws5 "5"
-	set $ws6 "6"
-	set $ws7 "7"
-	set $ws8 "8"
-	set $ws9 "9"
-	set $ws10 ""
-	set $brows "qutebrowser"
-	set $termin "termite"
+	set $ws1 "&#xf120;"
+	set $ws2 "&#xf115;"
+	set $ws3 "&#xf269;"
+	set $ws4 "&#xf1bc;"
+	set $ws5 "&#xf1e2;"
+	#set $ws10 ""
+
 
 	#workspace screen locations
 	#Left   = HDMI-0
