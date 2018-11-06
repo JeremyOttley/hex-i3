@@ -2,7 +2,7 @@
 
 ## translate to ruby and place in up.rb
 
-dir="/gazbit/hex-i3"
+dir="~/hex-i3"
 
 # # Files # #
 ln "$dir/.zshrc" $HOME/.zshrc &
