@@ -38,6 +38,10 @@ apps = %w[
   kitty-git
   firejail
   rxvt-unicode
+  zathura
+  zathura-djvu
+  zathura-cb
+  zathura-pdf-mupdf
 ]
 
 install = ->app{ `trizen -Syu --noconfirm #{app}` }
