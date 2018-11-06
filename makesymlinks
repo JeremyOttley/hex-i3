@@ -1,0 +1,26 @@
+#!/bin/bash
+
+## translate to ruby and place in up.rb
+
+dir="/gazbit/hex-i3"
+
+# # Files # #
+ln "$dir/.zshrc" $HOME/.zshrc &
+ln "$dir/.zshenv" $HOME/.zshenv &
+ln "$dir/.xinitrc" $HOME/.xinitrc &
+ln "$dir/.zprofile" $HOME/.zprofile &
+ln "$dir/.Xresources" $HOME/.Xresources &
+ln "$dir/.config/mpv/mpv.conf" $HOME/.config/mpv/mpv.conf &
+ln "$dir/.config/compton.conf" $HOME/.config/compton.conf &
+ln "$dir/.config/redshift.conf" $HOME/.config/redshift.conf &
+
+# # Folders # #
+ln -sfT "$dir/.config/i3" $HOME/.config/i3 &
+ln -sfT "$dir/.config/dunst" $HOME/.config/dunst &
+ln -sfT "$dir/bin" $HOME/bin &
+ln -sfT "$dir/.config/qutebrowser" $HOME/.config/qutebrowser &
+ln -sfT "$dir/.config/cava" $HOME/.config/cava &
+
+# # Feedback # #
+
+echo "Finished"
