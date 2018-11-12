@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+DESTINATION = Dir.home
+
 apps = %w[
   feh
   i3-gaps-next-git
