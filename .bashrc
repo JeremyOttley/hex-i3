@@ -100,6 +100,9 @@ bind -r "\C-e" && bind "\C-e":end-of-line
 bind -r "\C-p" && bind "\C-p":history-search-backward
 bind -r "\C-n" && bind "\C-n":history-search-forward
 
+#function cdls () { cd "$@" ; eval ls "\"\$$#\"";}
+function cdll () { cd "$@" ; eval ll "\"\$$#\"";}
+function cdla () { cd "$@" ; eval la "\"\$$#\"";}
 cdls() { cd "$@" && ls; } # Combo command
 alias cd='cdls'
 
@@ -120,9 +123,9 @@ retry() {
 
 
 ## Functions
-function cd() {
-    builtin cd $@ && ls
-}
+#function cd() {
+#    builtin cd $@ && ls
+#}
 
 # Back up a file. Usage "backfile filename.txt"
 backupthis ()
